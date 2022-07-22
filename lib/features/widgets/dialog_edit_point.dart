@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dijkstra/dijkstra.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 Future dialogEditPoint(
     BuildContext context,
@@ -17,6 +18,16 @@ Future dialogEditPoint(
       return AlertDialog(
         title: Text("Ponto ${e["id"]}"),
         content: Text("X = ${e["x"]}\nY = ${e["y"]}\nPrev = ${e['vizinhos']}"),
+        //   SingleChildScrollView(
+        //     child: Container(
+        //       width: 300,
+        //       child: QrImage(
+        //         data: "testData",
+        //       ),
+        //     ),
+        //   ),
+        // ],
+        // ),
         actions: [
           TextButton(
             onPressed: () {

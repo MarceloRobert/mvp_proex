@@ -55,7 +55,7 @@ class PersonModel {
   // construtor
   PersonModel(this._x, this._y, this._z, this._lat, this._lon, this._alt) {
     // if (Platform.isAndroid) {
-    if(!kIsWeb){
+    if (!kIsWeb) {
       while (true) {
         Future.delayed(Duration(seconds: 2)).then((value) =>
             _determinePosition().then((value) => _lat +=

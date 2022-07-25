@@ -192,8 +192,10 @@ class _SVGMapState extends State<SVGMap> {
                   color: Colors.white,
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Qrcodemvp()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Qrcodescannermvp()));
                 },
               ),
             ),

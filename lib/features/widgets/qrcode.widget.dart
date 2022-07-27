@@ -23,7 +23,6 @@ class Qrcodemvp extends StatelessWidget {
           data: qrData,
           size: 250,
           backgroundColor: Colors.white,
-          version: QrVersions.auto,
         ),
       ),
     );

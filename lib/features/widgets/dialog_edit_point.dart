@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dijkstra/dijkstra.dart';
+import 'package:mvp_proex/features/widgets/dialog_qrcode.widget.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 Future dialogEditPoint(
@@ -18,16 +19,6 @@ Future dialogEditPoint(
       return AlertDialog(
         title: Text("Ponto ${e["id"]}"),
         content: Text("X = ${e["x"]}\nY = ${e["y"]}\nPrev = ${e['vizinhos']}"),
-        //   SingleChildScrollView(
-        //     child: Container(
-        //       width: 300,
-        //       child: QrImage(
-        //         data: "testData",
-        //       ),
-        //     ),
-        //   ),
-        // ],
-        // ),
         actions: [
           TextButton(
             onPressed: () {
@@ -39,18 +30,20 @@ Future dialogEditPoint(
             ),
           ),
           TextButton(
-            onPressed: e["id"] == id
-                ? () {
-                    points.remove(e);
-
-                    Navigator.pop(context);
-                  }
-                : null,
+            onPressed: () {
+              points.remove(e);
+              Navigator.pop(context);
+            },
             child: const Text(
               "Remover",
               style: TextStyle(color: Colors.redAccent),
             ),
           ),
+          TextButton(
+              onPressed: () {
+                qrDialog(context, e["id"]);
+              },
+              child: const Text("QRCode")),
           TextButton(
             onPressed: () {
               prev = e["id"];
